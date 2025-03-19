@@ -20,18 +20,14 @@ const Contact = () => {
       setIsSubmitting(true);
       setSubmitStatus("idle");
 
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        'service_7ame4gu',
-        'template_ghbw0b6',
-        {
-          from_name: formRef.current?.from_name.value,
-          user_email: formRef.current?.user_email.value,
-          subject: formRef.current?.subject.value,
-          message: formRef.current?.message.value,
-          to_email: "shashwatsumanat49@gmail.com"
-        },
-        '6qQabBJ_BQ-ZYtfbS'
+      const formData = new FormData(formRef.current);
+      formData.append("to_email", "shashwatsumanat49@gmail.com"); // Ensure recipient email is added
+
+      const result = await emailjs.sendForm(
+        "service_7ame4gu", // Replace with your EmailJS service ID
+        "template_ghbw0b6", // Replace with your EmailJS template ID
+        formRef.current,
+        "6qQabBJ_BQ-ZYtfbS" // Replace with your EmailJS public key
       );
 
       if (result.status === 200) {
@@ -110,11 +106,24 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-800">Let's Connect</h3>
-              <p className="text-sm sm:text-base text-gray-600">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-              </p>
+            <div className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">Location</h3>
+              <div className="w-full h-[300px] rounded-xl overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0457362041584!2d77.51271827536738!3d28.628894175669396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cee22c60837b7%3A0x27a527e194ff4b3d!2sGreater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710241548736!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-xl"
+                ></iframe>
+              </div>
+              <div className="mt-4 flex items-center gap-2 text-gray-600">
+                <MapPin className="w-5 h-5 text-emerald-500" />
+                <span className="text-sm">Greater Noida, India</span>
+              </div>
             </div>
           </motion.div>
 

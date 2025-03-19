@@ -51,7 +51,7 @@ const projects: Project[] = [
       { category: "Core", tools: ["Node.js", "JavaScript"] }
     ],
     githubUrl: "https://github.com/ShashwatSuman29/Npm-Package",
-    liveUrl: "https://www.npmjs.com/package/react-form-validator",
+    liveUrl: "https://www.npmjs.com/settings/shashwat_suman/packages",
     icon: <Package className="w-6 h-6" />
   },
   {
