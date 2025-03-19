@@ -38,21 +38,19 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "NPM Package - React Form Validator",
-    description: "A lightweight form validation package for React with TypeScript support and built-in validation patterns.",
+    title: "NPM Package",
+    description: "A lightweight currency converter package for javascipt which can be installed using npm i shashwat-currency-convertor29.",
     features: [
-      "TypeScript Support",
-      "Tree Shaking Enabled",
-      "Common Validation Patterns",
-      "Extensive Documentation"
+      "Lightweight & Fast",
+      "Easy to Install",
+      "Multi-Currency Support",
+      "Real-time Exchange Rates"
     ],
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     techStack: [
-      { category: "Core", tools: ["TypeScript", "React"] },
-      { category: "Build", tools: ["Rollup", "Jest"] },
-      { category: "Docs", tools: ["Storybook", "JSDoc"] }
+      { category: "Core", tools: ["Node.js", "JavaScript"] }
     ],
-    githubUrl: "https://github.com/ShashwatSuman29/react-form-validator",
+    githubUrl: "https://github.com/ShashwatSuman29/Npm-Package",
     liveUrl: "https://www.npmjs.com/package/react-form-validator",
     icon: <Package className="w-6 h-6" />
   },
