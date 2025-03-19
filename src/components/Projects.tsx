@@ -32,7 +32,7 @@ const projects: Project[] = [
       { category: "Backend", tools: ["Node.js", "Express.js", "MongoDB"] },
       { category: "Other", tools: ["JWT", "OAuth", "AWS"] }
     ],
-    githubUrl: "https://github.com/ShashwatSuman29/food-delivery-app",
+    githubUrl: "https://github.com/ShashwatSuman29/Multivendor-food-delivery-webapp",
     liveUrl: "https://food-delivery-app.vercel.app",
     icon: <Utensils className="w-6 h-6" />
   },
@@ -58,8 +58,8 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Self-Care & Productivity App",
-    description: "A gamified habit-tracking app that helps users build better habits with rewards and progress tracking.",
+    title: "Nourishly",
+    description: "Nourishly is a self care webapp which allowas users to track their daily routine goals (Physical , Mental and Educationals). It also calculate the daily Calories needed and also calculate the macronutreints present in food items given by users.",
     features: [
       "Physical & Mental Health Goals",
       "Nutrition & Macro Tracking",
@@ -72,8 +72,8 @@ const projects: Project[] = [
       { category: "Backend", tools: ["Node.js", "MongoDB"] },
       { category: "Services", tools: ["Firebase", "Stripe"] }
     ],
-    githubUrl: "https://github.com/ShashwatSuman29/self-care-app",
-    liveUrl: "https://self-care-app.vercel.app",
+    githubUrl: "https://github.com/ShashwatSuman29/Nourishly",
+    liveUrl: "https://nourishly.vercel.app/",
     icon: <Heart className="w-6 h-6" />
   }
 ];

@@ -21,10 +21,16 @@ const Contact = () => {
       setSubmitStatus("idle");
 
       // Send email using EmailJS
-      const result = await emailjs.sendForm(
+      const result = await emailjs.send(
         'service_7ame4gu',
-        'template_jctl9la',
-        formRef.current,
+        'template_ghbw0b6',
+        {
+          from_name: formRef.current?.from_name.value,
+          user_email: formRef.current?.user_email.value,
+          subject: formRef.current?.subject.value,
+          message: formRef.current?.message.value,
+          to_email: "shashwatsumanat49@gmail.com"
+        },
         '6qQabBJ_BQ-ZYtfbS'
       );
 
@@ -139,13 +145,13 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="reply_to" className="block text-sm font-medium mb-2 text-gray-700">
+                <label htmlFor="user_email" className="block text-sm font-medium mb-2 text-gray-700">
                   Email
                 </label>
                 <input
                   type="email"
-                  id="reply_to"
-                  name="reply_to"
+                  id="user_email"
+                  name="user_email"
                   required
                   className="w-full px-4 py-2.5 sm:py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-sm sm:text-base"
                   placeholder="your@email.com"
