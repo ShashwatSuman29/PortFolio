@@ -1,1 +1,1 @@
-building webapp using AI tools.
+My personal portfolio showcasing my skillset , projects and details.
