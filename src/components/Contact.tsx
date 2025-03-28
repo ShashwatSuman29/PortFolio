@@ -20,14 +20,20 @@ const Contact = () => {
       setIsSubmitting(true);
       setSubmitStatus("idle");
 
-      const formData = new FormData(formRef.current);
-      formData.append("to_email", "shashwatsumanat49@gmail.com"); // Ensure recipient email is added
+      // Create template parameters
+      const templateParams = {
+        from_name: formRef.current.from_name.value,
+        user_email: formRef.current.user_email.value,
+        subject: formRef.current.subject.value,
+        message: formRef.current.message.value,
+        to_email: "shashwatsumanat49@gmail.com", // Add recipient email explicitly
+      };
 
-      const result = await emailjs.sendForm(
-        "service_7ame4gu", // Replace with your EmailJS service ID
-        "template_ghbw0b6", // Replace with your EmailJS template ID
-        formRef.current,
-        "6qQabBJ_BQ-ZYtfbS" // Replace with your EmailJS public key
+      const result = await emailjs.send(
+        "service_7ame4gu",
+        "template_ghbw0b6",
+        templateParams,
+        "6qQabBJ_BQ-ZYtfbS"
       );
 
       if (result.status === 200) {
