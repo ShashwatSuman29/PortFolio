@@ -1,1 +1,1 @@
-building webapp using AI tools.
+My portfolio website is completely responsive on all device dimensions. It is built using Reactjs , Typescript, TailwindCSS , EmailJS. It is deployed using Vercel. This fully mobile-responsive platform showcases my skills, projects, and experience in an interactive and engaging way. With smooth animations and a clean UI, it provides visitors with a seamless browsing experience.
