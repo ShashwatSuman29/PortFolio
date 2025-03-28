@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, Rocket, Briefcase, User, Mail, Star } from "lucide-react";
+import { Menu, X, Code2, Rocket, Briefcase, User, Mail, Star, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
 
@@ -43,10 +44,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/", isPage: true },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
+    { name: "Blog", href: "/blog", isPage: true },
   ];
 
   return (
@@ -59,23 +61,23 @@ const Navbar = () => {
       )}
     >
       <div className="container px-8 mx-auto flex items-center justify-between">
-        <a
-          href="#home"
+        <Link
+          to="/"
           className="text-gray-800 font-display text-xl font-bold transition-opacity hover:opacity-80"
         >
           Shashwat<span className="text-emerald-500">.</span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-gray-600 hover:text-emerald-500 font-medium text-sm transition-all duration-200 hover:scale-105"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -98,14 +100,14 @@ const Navbar = () => {
       >
         <nav className="container px-4 flex flex-col items-center space-y-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-gray-800 hover:text-emerald-500 font-medium text-2xl transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
