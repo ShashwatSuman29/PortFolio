@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, Github, Package, Utensils, Heart } from "lucide-react";
+import { ArrowUpRight, Github, Package, Utensils, Heart, Briefcase, Database } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,46 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: "JobPilot",
+    description: "A SaaS web application designed to help job seekers track, manage, and automate job applications efficiently with AI-powered automation.",
+    features: [
+      "Job Tracking Dashboard",
+      "Secure Credential Storage",
+      "AI-Powered Auto-Apply",
+      "Real-Time Updates"
+    ],
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+    techStack: [
+      { category: "Frontend", tools: ["React", "TypeScript", "TailwindCSS"] },
+      { category: "Backend", tools: ["Node.js", "Express.js", "MongoDB"] },
+      { category: "Other", tools: ["Puppeteer", "OpenAI API"] }
+    ],
+    githubUrl: "https://github.com/ShashwatSuman29/JobPilot",
+    liveUrl: "https://jobpilot-demo.vercel.app",
+    icon: <Briefcase className="w-6 h-6" />
+  },
+  {
+    id: 2,
+    title: "ApplyVault",
+    description: "A streamlined job application management tool designed to help users keep track of their job applications, including associated emails and passwords.",
+    features: [
+      "Application Tracking",
+      "Credential Management",
+      "Status Updates & Notifications",
+      "Search & Filters"
+    ],
+    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80",
+    techStack: [
+      { category: "Frontend", tools: ["React", "TypeScript"] },
+      { category: "Backend", tools: ["Supabase"] },
+      { category: "Other", tools: ["Responsive Design"] }
+    ],
+    githubUrl: "https://github.com/ShashwatSuman29/Apply-Vault",
+    liveUrl: "https://apply-vault.vercel.app/",
+    icon: <Database className="w-6 h-6" />
+  },
+  {
+    id: 3,
     title: "Multi-Vendor Food Delivery App",
     description: "A modern food delivery platform enabling restaurants to manage their menus and orders while customers track deliveries in real-time.",
     features: [
@@ -37,7 +77,7 @@ const projects: Project[] = [
     icon: <Utensils className="w-6 h-6" />
   },
   {
-    id: 2,
+    id: 4,
     title: "NPM Package",
     description: "A lightweight currency converter package for javascipt which can be installed using npm i shashwat-currency-convertor29.",
     features: [
@@ -55,7 +95,7 @@ const projects: Project[] = [
     icon: <Package className="w-6 h-6" />
   },
   {
-    id: 3,
+    id: 5,
     title: "Nourishly",
     description: "Nourishly is a self care webapp which allowas users to track their daily routine goals (Physical , Mental and Educationals). It also calculate the daily Calories needed and also calculate the macronutreints present in food items given by users.",
     features: [
