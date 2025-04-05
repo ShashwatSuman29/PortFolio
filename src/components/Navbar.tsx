@@ -56,7 +56,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4",
         isScrolled
-          ? "bg-white/80 shadow-sm backdrop-blur-sm py-3"
+          ? "bg-white shadow-sm backdrop-blur-sm py-3"
           : "bg-transparent py-4"
       )}
     >
@@ -82,22 +82,61 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden">
+          <button
+            className="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 bg-white shadow-md text-gray-800 hover:text-emerald-500"
+            style={{ backgroundColor: 'white' }}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X size={20} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ opacity: 0, rotate: 90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu size={20} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
-      <div
-        className={cn(
-          "fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out pt-20",
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        )}
+      <motion.div
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        variants={{
+          open: { opacity: 1, x: 0, pointerEvents: "auto" },
+          closed: { opacity: 0, x: 20, pointerEvents: "none" }
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="fixed inset-0 bg-white z-40 pt-20"
+        style={{ backgroundColor: 'white' }}
       >
+        {/* Back Button for Mobile Menu */}
+        <button
+          className="absolute top-6 right-8 text-gray-800 hover:text-emerald-500 transition-colors"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+        >
+          <X size={24} />
+        </button>
+        
         <nav className="container px-4 flex flex-col items-center space-y-6">
           {navLinks.map((link) => (
             <Link
@@ -110,7 +149,7 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
-      </div>
+      </motion.div>
     </header>
   );
 };

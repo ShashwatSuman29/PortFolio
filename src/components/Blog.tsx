@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const blogPosts = [
   {
@@ -162,12 +164,28 @@ const Blog = () => {
   const [selectedPost, setSelectedPost] = useState(null);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-[#f0fdf4] to-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-[#f0fdf4] to-white pt-8 px-4 sm:px-6 lg:px-8">
+      {/* Back Button */}
+      <motion.div 
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3 }}
+        className="container mx-auto mb-12"
+      >
+        <Link 
+          to="/" 
+          className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md text-gray-800 hover:text-emerald-500 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          <span>Back to Home</span>
+        </Link>
+      </motion.div>
+
       <motion.div
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="max-w-4xl mx-auto"
+        className="container mx-auto max-w-4xl pt-10"
       >
         <motion.div
           initial={{ opacity: 0, y: -20 }}

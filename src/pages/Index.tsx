@@ -57,8 +57,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 relative">
-      <div className="absolute inset-0 overflow-hidden -z-10">
+    <div className="min-h-screen bg-white text-gray-800 relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden -z-10 max-w-[100vw]">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-100/30 rounded-full filter blur-[120px]"></div>
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full filter blur-[100px]"></div>
         <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-emerald-100/30 rounded-full filter blur-[100px]"></div>
