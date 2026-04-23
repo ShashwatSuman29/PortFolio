@@ -56,21 +56,20 @@ const Hero = () => {
               transition={{ duration: 0.5 }}
               className="flex items-center justify-center md:justify-start gap-2 mb-6"
             >
-              <span className="px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium">
-                Web Developer
+              <span className="px-4 py-1.5 bg-emerald-100 text-emerald-600 rounded-full text-sm font-medium tracking-wide shadow-sm border border-emerald-200/50">
+                Software Engineer
               </span>
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-800"
+              className="text-[2rem] md:text-5xl lg:text-[3.5rem] font-bold mb-6 text-gray-800 leading-[1.15]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Hi! I'm{" "}
-              <span className="text-emerald-500">Shashwat</span>
+              Hi, I'm <span className="text-emerald-500">Shashwat</span>,
               <br />
-              A Web Developer.
+              a Full Stack AI Developer.
             </motion.h1>
             
             <motion.p
@@ -79,8 +78,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              I craft modern web applications with cutting-edge technologies,
-              focusing on performance, scalability, and exceptional user experiences.
+              I build scalable, modern web applications by bridging the gap between elegant design and robust engineering.
             </motion.p>
 
             <motion.div
@@ -99,7 +97,7 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4" />
               </motion.a>
               <motion.a
-                href="https://drive.google.com/file/d/1fwKA2lfetIiO4dYp1lxcjjpUi1Y70cAk/view"
+                href="https://drive.google.com/file/d/1VvH_sEKDVF5NSzLRYRFyulkxJveUZ8Wi/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-gray-700 px-6 py-3 rounded-full font-medium inline-flex items-center gap-2 border border-gray-200 hover:bg-gray-50 transition-colors"
@@ -152,7 +150,8 @@ const Hero = () => {
             >
               {[
                 "React", "Next.js", "TypeScript", "Node.js",
-                "MongoDB", "AWS", "Tailwind CSS", "Framer Motion"
+                "MongoDB", "SQL", "REST API", "Tailwind CSS", 
+                "AI Tools", "LLMs", "GenAI", "Agentic AI"
               ].map((tech, i) => (
                 <motion.span
                   key={tech}

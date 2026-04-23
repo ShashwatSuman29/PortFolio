@@ -18,46 +18,65 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "JobPilot",
-    description: "A SaaS web application designed to help job seekers track, manage, and automate job applications efficiently with AI-powered automation.",
+    title: "Vibe Code Editor",
+    description: "A browser-based code editor with in-browser execution, file management, multi-tab editing, and live preview for a smooth developer experience.",
     features: [
-      "Job Tracking Dashboard",
-      "Secure Credential Storage",
-      "AI-Powered Auto-Apply",
-      "Real-Time Updates"
+      "In-browser Execution",
+      "File Management",
+      "Multi-tab Editing",
+      "Live Preview"
     ],
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+    image: "/vibe-editor.png",
     techStack: [
-      { category: "Frontend", tools: ["React", "TypeScript", "TailwindCSS"] },
-      { category: "Backend", tools: ["Node.js", "Express.js", "MongoDB"] },
-      { category: "Other", tools: ["Puppeteer", "OpenAI API"] }
+      { category: "Frontend", tools: ["React", "TypeScript", "Monaco Editor"] },
+      { category: "Backend", tools: ["Node.js", "WebContainers"] }
     ],
-    githubUrl: "https://github.com/ShashwatSuman29/JobPilot",
-    liveUrl: "https://jobpilot-demo.vercel.app",
-    icon: <Briefcase className="w-6 h-6" />
-  },
-  {
-    id: 2,
-    title: "ApplyVault",
-    description: "A streamlined job application management tool designed to help users keep track of their job applications, including associated emails and passwords.",
-    features: [
-      "Application Tracking",
-      "Credential Management",
-      "Status Updates & Notifications",
-      "Search & Filters"
-    ],
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80",
-    techStack: [
-      { category: "Frontend", tools: ["React", "TypeScript"] },
-      { category: "Backend", tools: ["Supabase"] },
-      { category: "Other", tools: ["Responsive Design"] }
-    ],
-    githubUrl: "https://github.com/ShashwatSuman29/Apply-Vault",
-    liveUrl: "https://apply-vault.vercel.app/",
+    githubUrl: "https://github.com/ShashwatSuman29/vibe-code-editor",
+    liveUrl: "",
     icon: <Database className="w-6 h-6" />
   },
   {
+    id: 2,
+    title: "SolveX",
+    description: "A service-based platform showcasing web development and AI solutions with a strong focus on clean presentation, modern interactions, and conversion-driven structure.",
+    features: [
+      "Service Showcase",
+      "Modern Interactions",
+      "Conversion-driven",
+      "Role-Based Access"
+    ],
+    image: "/solvex.png",
+    techStack: [
+      { category: "Frontend", tools: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
+      { category: "Backend", tools: ["Supabase"] },
+      { category: "Other", tools: ["Razorpay", "RBAC"] }
+    ],
+    githubUrl: "https://github.com/ShashwatSuman29/SolveX",
+    liveUrl: "https://solvexdev.app",
+    icon: <Briefcase className="w-6 h-6" />
+  },
+  {
     id: 3,
+    title: "NextStep",
+    description: "A student counselling and admission booking platform with authentication, role-based access control, and scheduling workflows for smoother admission management.",
+    features: [
+      "Authentication",
+      "Role-based Access Control",
+      "Scheduling Workflows",
+      "Admission Management"
+    ],
+    image: "/nextstep.png",
+    techStack: [
+      { category: "Frontend", tools: ["Next.js", "TypeScript"] },
+      { category: "Backend", tools: ["Supabase", "PostgreSQL"] },
+      { category: "Security", tools: ["RBAC"] }
+    ],
+    githubUrl: "https://github.com/ShashwatSuman29/NextStepv2",
+    liveUrl: "https://yournextstep.me",
+    icon: <Package className="w-6 h-6" />
+  },
+  {
+    id: 4,
     title: "Multi-Vendor Food Delivery App",
     description: "A modern food delivery platform enabling restaurants to manage their menus and orders while customers track deliveries in real-time.",
     features: [
@@ -73,46 +92,8 @@ const projects: Project[] = [
       { category: "Other", tools: ["JWT", "OAuth", "AWS"] }
     ],
     githubUrl: "https://github.com/ShashwatSuman29/Multivendor-food-delivery-webapp",
-    liveUrl: "https://food-delivery-app.vercel.app",
+    liveUrl: "",
     icon: <Utensils className="w-6 h-6" />
-  },
-  {
-    id: 4,
-    title: "NPM Package",
-    description: "A lightweight currency converter package for javascipt which can be installed using npm i shashwat-currency-convertor29.",
-    features: [
-      "Lightweight & Fast",
-      "Easy to Install",
-      "Multi-Currency Support",
-      "Real-time Exchange Rates"
-    ],
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-    techStack: [
-      { category: "Core", tools: ["Node.js", "JavaScript"] }
-    ],
-    githubUrl: "https://github.com/ShashwatSuman29/Npm-Package",
-    liveUrl: "https://www.npmjs.com/settings/shashwat_suman/packages",
-    icon: <Package className="w-6 h-6" />
-  },
-  {
-    id: 5,
-    title: "Nourishly",
-    description: "Nourishly is a self care webapp which allowas users to track their daily routine goals (Physical , Mental and Educationals). It also calculate the daily Calories needed and also calculate the macronutreints present in food items given by users.",
-    features: [
-      "Physical & Mental Health Goals",
-      "Nutrition & Macro Tracking",
-      "Smart Notifications",
-      "Rewards System"
-    ],
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
-    techStack: [
-      { category: "Frontend", tools: ["React.js", "Framer Motion"] },
-      { category: "Backend", tools: ["Node.js", "MongoDB"] },
-      { category: "Services", tools: ["Firebase", "Stripe"] }
-    ],
-    githubUrl: "https://github.com/ShashwatSuman29/Nourishly",
-    liveUrl: "https://nourishly.vercel.app/",
-    icon: <Heart className="w-6 h-6" />
   }
 ];
 
@@ -234,17 +215,19 @@ const Projects = () => {
                       </div>
 
                       <div className="flex items-center gap-4 pt-4">
-                        <motion.a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 text-sm font-medium transition-colors"
-                          whileHover={{ y: -2 }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          View Live
-                          <ArrowUpRight size={16} />
-                        </motion.a>
+                        {project.liveUrl && (
+                          <motion.a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full px-6 py-3 text-sm font-medium transition-colors"
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            View Live
+                            <ArrowUpRight size={16} />
+                          </motion.a>
+                        )}
                         <motion.a
                           href={project.githubUrl}
                           target="_blank"

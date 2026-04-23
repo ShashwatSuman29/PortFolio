@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, GraduationCap, Briefcase, Rocket, Star, Award, Brain, Zap } from "lucide-react";
+import { Code2, GraduationCap, ArrowRight, Rocket, Star, Award, Brain, Zap, Cpu, TerminalSquare } from "lucide-react";
 
 const About = () => {
   const fadeInUp = {
@@ -15,13 +15,6 @@ const About = () => {
     viewport: { once: true },
     transition: { staggerChildren: 0.2 }
   };
-
-  const skills = [
-    { icon: <Code2 size={20} />, name: "Full Stack Development", description: "MERN Stack Expert" },
-    { icon: <Brain size={20} />, name: "AI/ML Integration", description: "Modern AI Solutions" },
-    { icon: <Zap size={20} />, name: "Performance Optimization", description: "Speed & Efficiency" },
-    { icon: <Star size={20} />, name: "UI/UX Design", description: "Creative & Intuitive" }
-  ];
 
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-emerald-50 via-white to-emerald-50">
@@ -58,111 +51,85 @@ const About = () => {
           </motion.p>
         </div>
 
-        {/* Skills Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
-          variants={staggerContainer}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true }}
-        >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-gray-100 hover:border-emerald-200 transition-all duration-300 shadow-sm"
-              variants={fadeInUp}
-              whileHover={{ scale: 1.02, y: -5 }}
-            >
-              <div className="text-emerald-500 mb-3">{skill.icon}</div>
-              <h3 className="text-base font-semibold mb-1 text-gray-800">{skill.name}</h3>
-              <p className="text-sm text-gray-600">{skill.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-
         {/* Main Content Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-12 gap-8 relative z-10">
           {/* Left Column */}
           <motion.div
-            className="space-y-6"
+            className="lg:col-span-7 space-y-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden"
+              className="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-emerald-100/50 shadow-xl shadow-emerald-900/5 relative overflow-hidden group"
               variants={fadeInUp}
               whileHover={{ scale: 1.01 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-emerald-100 rounded-xl">
-                  <Award className="text-emerald-500" size={20} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">Professional Journey</h3>
+              <div className="absolute top-6 right-6 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity pointer-events-none z-0">
+                <Code2 size={64} />
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                As a passionate web developer, I specialize in creating innovative web solutions 
-                using cutting-edge technologies. My expertise in modern web development practices 
-                enables me to build robust and scalable applications.
+              <div className="flex items-center gap-4 mb-6 relative z-10">
+                <div className="p-3 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl shadow-lg shadow-emerald-500/20">
+                  <Award className="text-white" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Professional Journey</h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed mb-10">
+                My journey in tech began with a simple curiosity for how things work on the internet, which quickly evolved into a relentless passion for building robust, intelligent applications. Today, I leverage cutting-edge technologies to architect end-to-end solutions that are not only highly scalable but deeply intuitive. For me, development isn't just about syntax—it's about engineering systems that bridge the gap between complex logic and elegant user experiences.
               </p>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Star className="text-emerald-400" size={16} />
-                  <span>Freelance success on Fiverr and Upwork</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Star className="text-emerald-400" size={16} />
-                  <span>Interactive and 3D website development</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Star className="text-emerald-400" size={16} />
-                  <span>Modern UI/UX implementation expert</span>
-                </div>
+              
+              <div className="relative p-8 mt-4 bg-emerald-50/80 rounded-2xl border-l-4 border-emerald-500 italic text-emerald-900 font-semibold text-xl md:text-2xl shadow-sm flex items-center justify-center">
+                <span>&quot;Code your real life problems&quot;</span>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-100/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-400/10 rounded-full blur-2xl" />
             </motion.div>
 
             <motion.div 
-              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden"
+              className="bg-gradient-to-br from-emerald-50/80 to-emerald-100/50 backdrop-blur-md p-8 rounded-3xl border border-emerald-200/50 shadow-xl shadow-emerald-900/5 relative overflow-hidden group"
               variants={fadeInUp}
               whileHover={{ scale: 1.01 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-emerald-100 rounded-xl">
-                  <Rocket className="text-emerald-500" size={20} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">Future Vision</h3>
+              <div className="absolute top-6 right-6 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity pointer-events-none z-0">
+                <Rocket size={64} className="text-emerald-900" />
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                My goal is to push the boundaries of web development and artificial intelligence, 
-                creating innovative solutions that make a real impact. I'm particularly excited about 
-                exploring the intersection of AI and web development.
+              <div className="flex items-center gap-4 mb-4 relative z-10">
+                <div className="p-3 bg-emerald-200/50 backdrop-blur-md rounded-2xl">
+                  <Rocket className="text-emerald-700" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800">Future Vision</h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed relative z-10">
+                My goal is to continuously push the boundaries of Full Stack development and Artificial Intelligence. 
+                I am particularly excited about creating Agentic AI systems and exploring the intersection of Automation, GenAI, and futuristic web development to create solutions that make a real impact.
               </p>
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-emerald-200/30 rounded-full blur-xl" />
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-200/20 rounded-full blur-2xl" />
             </motion.div>
           </motion.div>
 
           {/* Right Column */}
           <motion.div
-            className="space-y-6"
+            className="lg:col-span-5 space-y-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden"
+              className="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-emerald-100/50 shadow-xl shadow-emerald-900/5 relative overflow-hidden group"
               variants={fadeInUp}
               whileHover={{ scale: 1.01 }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-emerald-100 rounded-xl">
-                  <GraduationCap className="text-emerald-500" size={20} />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800">Educational Background</h3>
+              <div className="absolute top-6 right-6 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity pointer-events-none z-0">
+                <GraduationCap size={64} />
               </div>
-              <div className="space-y-4">
+              <div className="flex items-center gap-4 mb-8 relative z-10">
+                <div className="p-3 bg-gradient-to-tr from-emerald-100 to-emerald-200 rounded-2xl shadow-sm">
+                  <GraduationCap className="text-emerald-700" size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 relative z-10">Educational Background</h3>
+              </div>
+              <div className="space-y-6 relative z-10">
                 {[
                   {
                     title: "B.Tech in Computer Science (AIML)",
@@ -185,18 +152,25 @@ const About = () => {
                 ].map((edu, index) => (
                   <motion.div
                     key={index}
-                    className="p-3 rounded-xl bg-emerald-50/50 hover:bg-emerald-50 transition-all duration-300"
+                    className="p-5 rounded-2xl bg-gradient-to-r from-emerald-50/80 to-transparent hover:from-emerald-100/80 transition-all duration-300 border border-emerald-100/30"
                     variants={fadeInUp}
                     whileHover={{ x: 5 }}
                   >
-                    <h4 className="font-medium text-base text-gray-800">{edu.title}</h4>
-                    <p className="text-sm text-gray-600">{edu.school}</p>
-                    <p className="text-xs text-emerald-600">{edu.year}</p>
-                    <p className="text-xs text-gray-500 mt-1">{edu.highlight}</p>
+                    <div className="flex justify-between items-start mb-1">
+                      <h4 className="font-bold text-gray-800 text-lg leading-tight pr-4">{edu.title}</h4>
+                      <span className="shrink-0 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">
+                        {edu.year}
+                      </span>
+                    </div>
+                    <p className="text-sm font-medium text-emerald-600/80 mb-2">{edu.school}</p>
+                    <div className="flex items-center gap-2 mt-2 pt-2 border-t border-emerald-100">
+                      <Star size={12} className="text-emerald-400" />
+                      <p className="text-sm text-gray-500">{edu.highlight}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-100/30 rounded-full blur-xl" />
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-400/10 rounded-full blur-2xl" />
             </motion.div>
           </motion.div>
         </div>
